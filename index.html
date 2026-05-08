@@ -3,18 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/main.css" />
     <meta name="description" content="Javascript Game" />
-    <link rel="stylesheet" href="./src/style/output.css" />
     <link
       rel="shortcut icon"
-      href="./public/Favicon-Site.ico"
+      href="./src/favicon/Favicon-Site.ico"
       type="image/x-icon"
     />
     <title>Tic Tac Toe</title>
   </head>
-  <body>
-    <section class="bg-black"></section>
-    <script src="./src/js/interface.js"></script>
-    <script src="./src/js/game.js"></script>
+  <body class="game">
+    <header>
+      <h1>Jogo da Velha</h1>
+      <div class="placar">
+        <p>
+          🛡️
+          <span id="scorePlayer0">0</span> x
+          <span id="scorePlayer1">0</span>
+          ⚔️ 
+        </p>
+      </div>
+    </header>
+    <section class="gameBoard">
+      <div class="cards">
+        <div id="0"></div>
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
+      </div>
+      <div class="controls">
+        <input type="button" name="start" id="start" value="Start Game" />
+        <input type="button" name="reset" id="reset" value="Reset Game" />
+      </div>
+      <h2 id="winner"></h2>
+    </section>
   </body>
+  <script src="./src/js/main.js"></script>
+  <script src="./src/js/game.js"></script>
 </html>

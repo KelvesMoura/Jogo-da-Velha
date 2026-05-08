@@ -1,0 +1,168 @@
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-self: center;
+  align-items: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-areas:
+    "div0 div1 div2"
+    "div3 div4 div5"
+    "div6 div7 div8";
+  width: auto;
+  height: fit-content;
+  gap: 1.2rem;
+  justify-self: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cards div {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(43, 114, 108);
+  box-shadow: 2px 2px 5px white;
+  justify-self: center;
+  align-self: center;
+  border-radius: 1rem;
+  border: 1px solid white;
+}
+
+.cards div:hover {
+  transform: scale(105%);
+}
+
+.cards div:nth-child(1) {
+  grid-area: div0;
+}
+
+.cards div:nth-child(2) {
+  grid-area: div1;
+}
+
+.cards div:nth-child(3) {
+  grid-area: div2;
+}
+
+.cards div:nth-child(4) {
+  grid-area: div3;
+}
+
+.cards div:nth-child(5) {
+  grid-area: div4;
+}
+
+.cards div:nth-child(6) {
+  grid-area: div5;
+}
+
+.cards div:nth-child(7) {
+  grid-area: div6;
+}
+
+.cards div:nth-child(8) {
+  grid-area: div7;
+}
+
+.cards div:nth-child(9) {
+  grid-area: div8;
+}
+
+.o {
+  position: relative;
+}
+
+.o:after {
+  position: absolute;
+  content: "🛡️";
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.x {
+  position: relative;
+}
+
+.x:after {
+  position: absolute;
+  content: "⚔️";
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.controls {
+  display: flex;
+  width: auto;
+  justify-self: center;
+  align-self: center;
+  gap: 1.2rem;
+}
+
+#start,
+#reset {
+  text-align: center;
+  background-color: rgb(43, 76, 114);
+  border: 1px solid white;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px white;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#start:hover,
+#reset:hover {
+  transform: scale(105%);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.winner {
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.05;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .cards div {
+    width: 80px;
+    height: 80px;
+  }
+
+  h2 {
+    margin-top: 5rem;
+  }
+}
